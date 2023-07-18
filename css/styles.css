@@ -2,6 +2,7 @@
     /* ----- PRIMARY COLORS ----- */
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
+    --cyan--with-opacity: rgba(0, 255,247, 0.4);
     
     
     /* ----- NEUTRAL COLORS ----- */
@@ -47,9 +48,32 @@ main {
     background-color: var(--very-dark-blue--card-bg);
 }
 
+.img-container {
+    position: relative;
+}
+
 .ntf-card--image {
     width: 100%;
+    object-fit: contain;
     border-radius: 1rem;
+}
+
+.img-capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 99%;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    background-color: var(--cyan--with-opacity);
+    opacity: 0;
+}
+
+.img-capa:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
 .ntf-card--info__title {
@@ -116,4 +140,10 @@ main {
 .creatror-credits span {
     font-weight: 300;
     color: var(--white);
+}
+
+.creatror-credits span:hover,  .ntf-card--info__title:hover{
+    color: var(--cyan);
+    cursor: pointer;
+    transition: all .3s ease;
 }
